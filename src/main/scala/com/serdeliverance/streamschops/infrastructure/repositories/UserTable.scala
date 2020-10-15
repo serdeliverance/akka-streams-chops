@@ -14,3 +14,7 @@ class UserTable(tag: Tag) extends Table[User](tag, "users"){
 
   def * = (id, username, password, email).mapTo[User]
 }
+
+object UserTable {
+  val table = TableQuery[UserTable]
+}
