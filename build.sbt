@@ -11,6 +11,7 @@ lazy val root = (project in file("."))
     libraryDependencies ++= Seq(
       "com.typesafe.akka" %% "akka-actor-typed"         % akkaVersion,
       "com.typesafe.akka" %% "akka-stream"              % akkaVersion,
+      "com.lightbend.akka" %% "akka-stream-alpakka-slick" % "2.0.2",
       "org.scalatest" %% "scalatest" % "3.2.2"
     ),
     mainClass in (Compile, run) := Option("com.serdeliverance.streamschops.AkkaStreamsChops")
