@@ -1,16 +1,17 @@
 version: '3.7'
 
 services:
-  mysql:
-    image: mysql:5.7
-    ports:
-      - 3307:3306
-      - 33070:33060
+  postgres:
+    image: postgres:latest
+    container_name: postgres
     environment:
-      MYSQL_ROOT_PASSWORD: "root"
+      - "TZ=Europe/Amsterdam"
+      - "POSTGRES_USER=root"
+      - "POSTGRES_PASSWORD=root"
+    ports:
+      - "45432:5432"
     volumes:
-      - ./mysql/createDatabases.sql:/docker-entrypoint-initdb.d/createDatabases.sql
-      - ./mysql:/etc/mysql/mysql.conf.d
+      - "./sql:/docker-entrypoint-initdb.d"
 
   zookeeper:
     image: wurstmeister/zookeeper

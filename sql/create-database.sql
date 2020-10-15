@@ -1,0 +1,14 @@
+--Setup database
+DROP DATABASE IF EXISTS demo;
+CREATE DATABASE demo;
+\c demo;
+
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE IF NOT EXISTS users (
+  id BIGSERIAL,
+  username VARCHAR(255) NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  PRIMARY KEY(id)
+);
