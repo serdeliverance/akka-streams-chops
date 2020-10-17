@@ -13,6 +13,12 @@ services:
     volumes:
       - "./sql:/docker-entrypoint-initdb.d"
 
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8083:8080
+
   zookeeper:
     image: wurstmeister/zookeeper
     ports:

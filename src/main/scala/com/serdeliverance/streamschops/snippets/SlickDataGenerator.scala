@@ -2,14 +2,14 @@ package com.serdeliverance.streamschops.snippets
 
 import akka.actor.ActorSystem
 import akka.stream.alpakka.slick.scaladsl.{Slick, SlickSession}
-import akka.stream.scaladsl.{Sink, Source}
+import akka.stream.scaladsl.Source
 import com.serdeliverance.streamschops.domain.Domain.User
 import com.serdeliverance.streamschops.infrastructure.repositories.UserTable.table
 import com.typesafe.config.ConfigFactory
+import slick.jdbc.PostgresProfile.api._
 
 import scala.concurrent.Await
 import scala.concurrent.duration.Duration
-import slick.jdbc.MySQLProfile.api._
 
 /**
  * Inserts data into slick using Slick.sink provided by Alpakka

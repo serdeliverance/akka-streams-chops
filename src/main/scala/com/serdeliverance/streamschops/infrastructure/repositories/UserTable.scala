@@ -1,7 +1,7 @@
 package com.serdeliverance.streamschops.infrastructure.repositories
 
 import com.serdeliverance.streamschops.domain.Domain.User
-import slick.jdbc.MySQLProfile.api._
+import slick.jdbc.PostgresProfile.api._
 
 class UserTable(tag: Tag) extends Table[User](tag, "users"){
   def id: Rep[Option[Int]] = column[Option[Int]]("id")
