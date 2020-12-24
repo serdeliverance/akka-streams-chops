@@ -6,6 +6,7 @@ ThisBuild / organizationName := "example"
 lazy val akkaVersion = "2.6.8"
 lazy val postgresVersion = "42.2.2"
 lazy val logbackVersion = "1.2.3"
+lazy val alpakkaVersion = "2.0.2"
 
 lazy val root = (project in file("."))
   .settings(
@@ -14,7 +15,8 @@ lazy val root = (project in file("."))
       // Actors and Streams
       "com.typesafe.akka" %% "akka-actor-typed"         % akkaVersion,
       "com.typesafe.akka" %% "akka-stream"              % akkaVersion,
-      "com.lightbend.akka" %% "akka-stream-alpakka-slick" % "2.0.2",
+      "com.lightbend.akka" %% "akka-stream-alpakka-slick" % alpakkaVersion,
+      "com.lightbend.akka" %% "akka-stream-alpakka-file" % alpakkaVersion,
       // JDBC with PostgreSQL
       "org.postgresql" % "postgresql" % postgresVersion,
       // Logger

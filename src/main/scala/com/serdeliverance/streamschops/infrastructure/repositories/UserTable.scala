@@ -16,5 +16,5 @@ class UserTable(tag: Tag) extends Table[User](tag, "users"){
 }
 
 object UserTable {
-  val table = TableQuery[UserTable]
+  val userTable = TableQuery[UserTable]
 }
