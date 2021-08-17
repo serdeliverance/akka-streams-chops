@@ -12,7 +12,7 @@ import akka.stream.scaladsl.{FileIO, Source}
 import akka.util.ByteString
 import com.serdeliverance.streamschops.domain.Domain.User
 import com.serdeliverance.streamschops.infrastructure.repositories.UserTable.userTable
-import com.serdeliverance.streamschops.snippets.Companion.CSVWrapper
+import com.serdeliverance.streamschops.snippets.CSVUtils.CSVWrapper
 import slick.jdbc.PostgresProfile.api._
 
 /**
@@ -39,7 +39,7 @@ object RetrieveDataAsCompressedCsv extends App {
   fileStream.runWith(FileIO.toPath(Paths.get("tmp/user.csv")))
 }
 
-object Companion {
+object CSVUtils {
   implicit class CSVWrapper(val user: User) extends AnyVal {
     def toCSV(): String = user.productIterator.map{
       case Some(value) => value
